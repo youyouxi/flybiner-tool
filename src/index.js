@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { MainRouter } from "./router";
+import { BrowserRouter as Router} from 'react-router-dom';
+import IndexPage from "./page/IndexPage";
 
-ReactDom.render(
-    <MainRouter/>,
-    document.getElementById('root')
-);
+const root = ReactDom.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <Router>
+            <IndexPage />
+        </Router>
+    </React.StrictMode>
+)
