@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom/client';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import IndexPage from "./page/IndexPage";
 
 const root = ReactDom.createRoot(document.getElementById('root'));
