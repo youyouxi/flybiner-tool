@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 import { useNavigate, Routes, Route } from 'react-router-dom'
 import DataBase from './database/DataBase';
 import Redis from './redis/Redis';
+import Default from './Default.js';
 
 const {Content, Sider } = Layout;
 
@@ -24,6 +25,7 @@ const IndexPage = () => {
     const [collapsed, setCollapsed] = useState(false);
     const navigate = useNavigate()
     const onClick = (e) => {
+        console.log(e)
         navigate(e.key, { replace: true })
     }
     return (
@@ -59,6 +61,7 @@ const IndexPage = () => {
                         }}
                     >
                         <Routes>
+                            <Route exact path="/" element={<Default />} />
                             <Route exact path="/DataBase" element={<DataBase />} />
                             <Route exact path="/Redis" element={<Redis />} />
                         </Routes>

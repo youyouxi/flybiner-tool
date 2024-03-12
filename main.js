@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const path = require('node:path')
 
 const createWindow = () => {
     // Create the browser window.
@@ -12,10 +11,7 @@ const createWindow = () => {
     })
 
     // 获取 main.js 所在的目录
-    const __dirname = path.resolve();
-
-    // 加载 index.html
-    mainWindow.loadFile(path.join(__dirname, 'build', 'index.html'));
+    mainWindow.loadFile('./build/index.html');
 
     // 打开开发工具
     mainWindow.webContents.openDevTools()
